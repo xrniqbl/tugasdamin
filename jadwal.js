@@ -2,11 +2,20 @@
 const activityForm = document.getElementById('activity-form');
 const scheduleTableBody = document.querySelector('#schedule-table tbody');
 
+// Cek login sebelum membuka halaman atau menambahkan jadwal
+const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true'; // Cek status login dari localStorage
+if (!isLoggedIn) {
+    alert('Anda harus login untuk mengakses halaman ini.');
+    window.location.href = './login.html'; // Arahkan ke halaman login jika belum login
+}
+
+// Event listener untuk logout
 document.getElementById('logoutButton').addEventListener('click', () => {
-    window.location.href = '/Utama/index.html'; // Pindah ke halaman index.html
+    localStorage.removeItem('isLoggedIn'); // Menghapus status login
+    window.location.href = './index.html'; // Pindah ke halaman index.html
 });
 
-// Event listener untuk form
+// Event listener untuk form aktivitas
 activityForm.addEventListener('submit', function (e) {
     e.preventDefault();
 
@@ -22,22 +31,14 @@ activityForm.addEventListener('submit', function (e) {
         return;
     }
 
-    const isLoggedIn = false; // Status login pengguna
-  if (!isLoggedIn) {
-    alert('Anda harus login untuk mengakses halaman ini.');
-    window.location.href = '/Utama/login.html'; // Arahkan ke halaman login
-  }
-
     // Tambahkan baris baru ke tabel
     const newRow = document.createElement('tr');
-
     newRow.innerHTML = `
         <td>${activity}</td>
         <td>${date}</td>
         <td>${time}</td>
         <td>${athlete}</td>
     `;
-
     scheduleTableBody.appendChild(newRow);
 
     // Reset form

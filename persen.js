@@ -74,7 +74,7 @@ document.getElementById('addAthlete').addEventListener('click', function() {
 // Logout Function
 function logout() {
     localStorage.removeItem("isLoggedIn");
-    window.location.href = "/Utama/index.html";
+    window.location.href = "./index.html";
 }
 
 // **Perbaikan: Hilangkan cek login untuk persen.html**
@@ -83,7 +83,7 @@ if (currentPage !== 'persen.html') {
     const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true'; // Status login pengguna
     if (!isLoggedIn) {
         alert('Anda harus login untuk mengakses halaman ini.');
-        window.location.href = '/Utama/login.html'; // Arahkan ke halaman login
+        window.location.href = './login.html'; // Arahkan ke halaman login
     }
 }
 

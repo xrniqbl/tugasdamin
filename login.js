@@ -40,7 +40,7 @@ function loadLoginForm() {
             localStorage.setItem('isLoggedIn', 'true');
             localStorage.setItem('username', username);
             alert(`Welcome, ${username}!`);
-            window.location.href = '/Utama/index.html';
+            window.location.href = './index.html';
         } else {
             alert('Please enter both username and password.');
         }
@@ -90,7 +90,7 @@ function loadRegisterForm() {
             localStorage.setItem('isLoggedIn', 'true');
             localStorage.setItem('username', newUsername);
             alert(`Registration successful! Welcome, ${newUsername}!`);
-            window.location.href = '/Utama/index.html';
+            window.location.href = './index.html';
         } else {
             alert('Please fill out all fields.');
         }

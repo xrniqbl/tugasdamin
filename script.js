@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
             alert('Masuk atau Daftar berhasil!');
 
             // Redirect to Data Atlet page
-            window.location.href = '/Utama/data.html';
+            window.location.href = './data.html';
         });
     }
 
