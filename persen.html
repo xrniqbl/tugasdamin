@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Presentasi Web</title>
+    <link rel="stylesheet" href="persen.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/papaparse/5.3.0/papaparse.min.js"></script>
+    <script src="persen.js" defer></script>
+</head>
+<body>
+    <nav>
+        <div class="nav-left">
+            <ul>
+                <li><a href="#clustering">Clustering</a></li>
+                <li><a href="#win-percentage">Persentase Kemenangan</a></li>
+            </ul>
+        </div>
+        <div class="nav-right">
+            <button id="logout-button" onclick="logout()">Logout</button>
+        </div>
+    </nav>
+
+    <section id="clustering">
+        <h1>K-Means Clustering</h1>
+        <form id="uploadForm">
+            <label for="fileInput">Unggah File CSV:</label>
+            <input type="file" id="fileInput" accept=".csv">
+            <label for="clusters">Jumlah Klaster:</label>
+            <input type="number" id="clusters" value="3" min="1">
+            <button type="submit">Kelompokkan Data</button>
+        </form>
+        <canvas id="scatterChart" width="400" height="400"></canvas>
+    </section>
+
+    <section id="win-percentage">
+        <h1>Persentase Kemenangan</h1>
+        <form id="winForm">
+            <label for="athleteName">Nama Atlet:</label>
+            <input type="text" id="athleteName" placeholder="Masukkan nama atlet">
+            <label for="winRate">Persentase Kemenangan:</label>
+            <input type="number" id="winRate" min="0" max="100" placeholder="Masukkan persentase kemenangan">
+            <button type="button" id="addAthlete">Tambah Atlet</button>
+        </form>
+        <canvas id="winChart" width="400" height="400"></canvas>
+    </section>
+</body>
+</html>
